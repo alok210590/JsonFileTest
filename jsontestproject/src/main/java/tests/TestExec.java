@@ -6,7 +6,7 @@ import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestExec extends JsonTest {
+public class TestExec {
 
 	private JsonTest jsonTest = new JsonTest();
 	
@@ -17,7 +17,7 @@ public class TestExec extends JsonTest {
 	 */
 	@Test
 	public void validateForeignPlayers() throws IOException, ParseException {
-		Assert.assertEquals(jsonTest.getForeignPlayers(getJsonData()), 4);
+		Assert.assertEquals(jsonTest.getForeignPlayers(jsonTest.getJsonData()), 4);
 		System.out.println("RCB team has 4 foreign players as expected.");
 	}
 
@@ -28,7 +28,7 @@ public class TestExec extends JsonTest {
 	 */
 	@Test
 	public void validateWeeketKeeper() throws IOException, ParseException {
-		Assert.assertEquals(jsonTest.getNoOfWicketKeepers(getJsonData()), 1);
+		Assert.assertEquals(jsonTest.getNoOfWicketKeepers(jsonTest.getJsonData()), 1);
 		System.out.println("RCB team has 1 wicket keeper player as expected.");
 	}
 }
